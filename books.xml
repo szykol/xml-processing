@@ -1,0 +1,62 @@
+<books>
+    <book>
+        <title type="science">Wszechświat w twojej dłoni</title>
+        <author>Christophe Galfard</author>
+        <artbook>https://ecsmedia.pl/c/wszechswiat-w-twojej-dloni-b-iext50058337.jpg</artbook>
+        <pages>323</pages>
+    </book>
+    <book>
+        <title type="science">Krótkie odpowiedzi na wielkie pytania</title>
+        <author>Stephen Hawking</author>
+        <artbook>https://ecsmedia.pl/c/krotkie-odpowiedzi-na-wielkie-pytania-w-iext53500410.jpg</artbook>
+        <pages>251</pages>
+    </book>
+    <book>
+        <title type="science">Ilustrowana krótka historia czasu</title>
+        <author>Stephen Hawking</author>
+        <artbook>https://s12emagst.akamaized.net/products/3978/3977826/images/res_58c1db431d4cb89f2ee9f6686a4ee2f1_full.jpg</artbook>
+        <pages>700</pages>
+    </book>
+    <book>
+        <title type="it">Język C++ Szkoła programowania</title>
+        <author>Stephen Prata</author>
+        <artbook>https://static01.helion.com.pl/helion/okladki/326x466/cppri6.jpg</artbook>
+        <pages>1232</pages>
+    </book>
+    <book>
+        <title type="it">Skuteczny nowoczesny C++</title>
+        <author>Scott Meyers</author>
+        <artbook>https://static01.helion.com.pl/helion/okladki/326x466/e_07we.jpg</artbook>
+        <pages>300</pages>
+    </book>
+    <book>
+        <title type="feature">Metro 2033</title>
+        <author>Dmitry Glukhovsky</author>
+        <artbook>https://www.ravelo.pl/pub/mm/img/220/12583183.jpg</artbook>
+        <pages>320</pages>
+    </book>
+    <book>
+        <title type="feature">Wiedźmin</title>
+        <author>Andrzej Sapkowski</author>
+        <artbook>https://ecsmedia.pl/c/krew-elfow-wiedzmin-tom-3-w-iext44036191.jpg</artbook>
+        <pages>390</pages>
+    </book>
+    <book>
+        <title type="feature">Złodziej pioruna</title>
+        <author>Rick Riordan</author>
+        <artbook>https://ecsmedia.pl/c/zlodziej-pioruna-percy-jackson-i-bogowie-olimpijscy-tom-1-w-iext44134207.jpg</artbook>
+        <pages>390</pages>
+    </book>
+    <book>
+        <title type="feature">Malowany ptak</title>
+        <author>Jerzy Kosiński</author>
+        <artbook>https://ecsmedia.pl/c/malowany-ptak-w-iext43255773.jpg</artbook>
+        <pages>390</pages>
+    </book>
+    <book>
+        <title type="feature">Harry Potter</title>
+        <author>J.K Rowling</author>
+        <artbook>https://ecsmedia.pl/c/harry-potter-i-zakon-feniksa-tom-5-w-iext44136431.jpg</artbook>
+        <pages>390</pages>
+    </book>
+</books>
