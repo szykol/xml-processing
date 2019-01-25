@@ -14,7 +14,14 @@
         <button onclick="loadAndDisplay()">All</button>
         <button onclick="loadAndDisplay('it')">IT</button>
         <button onclick="loadAndDisplay('science')">Science</button>
-        <button onclick="loadAndDisplay('feature')">Feature</button>
+        <button onclick="loadAndDisplay('action')">Action</button>
+    </div>
+
+    <div class="inp" >
+        <form action="javascript:void(0);">
+            <input type="text" placeholder="Enter an element name..." id="name">
+            <input type="submit" value="OK" onclick="getTag()">
+        </form>
     </div>
 
     <div id="info" style="display: none;"></div>

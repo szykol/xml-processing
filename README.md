@@ -1,2 +1,2 @@
 # xml_processing
-Projekt utworzony w celu uzyskania zaliczenia z przedmiotu XML Processing
+Project created in order to complete my XML Processing class

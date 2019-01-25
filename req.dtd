@@ -1,0 +1,9 @@
+<!ELEMENT movies (movie+)>
+<!ELEMENT movie      (title, author, (artbook|cover), year)>
+<!ATTLIST movie type (science|it|action) "science">
+<!ELEMENT title        (#PCDATA)>
+<!ELEMENT author      (#PCDATA)>
+<!ATTLIST author sex CDATA #REQUIRED>
+<!ELEMENT artbook  (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ATTLIST year leap CDATA #REQUIRED>

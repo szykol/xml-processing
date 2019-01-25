@@ -4,13 +4,9 @@ print = (text) => {
 
 function loadAndDisplay(type) {
     if (type) 
-        load(`//book[@type='${type}']`, list => displayData(list));
+        load(`//movie[@type='${type}']`, list => displayData(list));
     else
-        load('//book',list=>displayData(list));
-}
-
-function loadAll() {
-    load("//book[@type='science']", list => print(list));
+        load('//movie',list=>displayData(list));
 }
 
 function load(XPath, callback) {
@@ -18,41 +14,29 @@ function load(XPath, callback) {
         const nodes = xml.evaluate(`${XPath}`, xml, null, XPathResult.ANY_TYPE, null);
         console.log(nodes);
 
-        let currentBook = nodes.iterateNext();
+        let currentMovie = nodes.iterateNext();
 
         objects = [];
-        while(currentBook) {
-            print(currentBook);
-            const title = currentBook.childNodes[1].firstChild.nodeValue;
-            const author = currentBook.childNodes[3].firstChild.nodeValue;
-            const imURL = currentBook.childNodes[5].firstChild.nodeValue;
-            const pages = currentBook.childNodes[7].firstChild.nodeValue;
+        while(currentMovie) {
+            print(currentMovie);
+            const title = currentMovie.childNodes[1].firstChild.nodeValue;
+            const author = currentMovie.childNodes[3].firstChild.nodeValue;
+            const imURL = currentMovie.childNodes[5].firstChild.nodeValue;
+            const year = currentMovie.childNodes[7].firstChild.nodeValue;
 
             let info = {
                 title,
                 author,
                 imURL,
-                pages
+                year
             };
 
             objects.push(info);
-            currentBook = nodes.iterateNext();
+            currentMovie = nodes.iterateNext();
         }
         callback(objects);
     });
 }
-
-function loadScience() {
-    load("//book[@type='science']", list => displayData(list));
-}
-
-function loadFeature() {
-    load("//book[@type='feature']", list => displayData(list));
-}
-
-function loadIT() {
-    load("//book[@type='it']", list => displayData(list));
-}   
 
 function displayData(objects) {
     let data = document.getElementById('info');
@@ -78,6 +62,10 @@ function displayData(objects) {
         img.setAttribute('height',"300px");
         card.appendChild(img);
 
+        let year = document.createElement('h4');
+        year.textContent = obj['year'];
+        card.appendChild(year);
+
         data.appendChild(card);
     }
     data.style.display = "block";
@@ -85,7 +73,7 @@ function displayData(objects) {
 
 function getXML(callback) {
     var req = new XMLHttpRequest();
-    req.open('GET', '/books.xml');
+    req.open('GET', '/movies.xml');
     req.onreadystatechange = function() {
         if (req.readyState == 4) {
             if(req.status == 200) {
@@ -98,4 +86,28 @@ function getXML(callback) {
         }
     }
     req.send();
+}
+
+function getTag() {
+    const tagName = document.getElementById('name').value;
+    
+    let data = document.getElementById('info');
+    data.innerHTML = "";
+
+    getXML(xml => {
+        const nodes = xml.evaluate(`//${tagName}`, xml, null, XPathResult.ANY_TYPE, null);
+        console.log(nodes);
+        
+        let currentNode = nodes.iterateNext();
+
+        while(currentNode) {
+            let p = document.createElement('p');
+            const xmlString = (new XMLSerializer()).serializeToString(currentNode);
+            p.textContent += xmlString;
+            data.appendChild(p);
+
+            currentNode = nodes.iterateNext();
+        }
+    });
+    data.style.display = "block";
 }

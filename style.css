@@ -3,11 +3,12 @@ body{
     margin: 0 auto;
     background-color: #4abdac;
     color: #dfdce3;
+    text-align: center;
 }
 
 div.card {
     width: 250px;
-    height: 440px;
+    height: 470px;
     padding: 5px 15px;
     text-align: center;
     margin-bottom: 5px;
@@ -26,7 +27,7 @@ h3, h4 {
     display: block;
 }
 
-button {
+button, input[type="submit"] {
     background: #26547C;
     width: 100px;
     height: 40px;
@@ -51,4 +52,23 @@ button {
     text-align: center;
     margin: 10px auto 30px auto;
 
+}
+
+.inp {
+    width: 400px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+}
+
+input {
+    height: 35px;
+    text-align: center;
+    border-radius: 10px;
+    width: 220px;
+    outline: none;
+    border: none;
+    background-color:  #dfdce3;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
 }

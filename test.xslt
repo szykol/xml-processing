@@ -6,11 +6,11 @@
         <html>
             <link rel="stylesheet" type="text/css" href="style.css"/>
             <head>
-                <title>My favorite books</title>
+                <title>My favorite movies</title>
             </head>
             <body>
-                <h1>These are the books I highly recommend</h1>
-                <xsl:for-each select="/books/book">
+                <h1>These are the movies I highly recommend</h1>
+                <xsl:for-each select="/movies/movie">
                     <div class="card">
                         <xsl:attribute name="style">
                             <xsl:choose>
@@ -20,7 +20,7 @@
                                 <xsl:when test="@type='it'">
                                     background-color: #fc4a1a;
                                 </xsl:when>
-                                <xsl:when test="@type='feature'">
+                                <xsl:when test="@type='action'">
                                     background-color: #26547C;
                                 </xsl:when>
                             </xsl:choose>
