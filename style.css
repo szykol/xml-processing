@@ -1,0 +1,54 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
+    background-color: #4abdac;
+    color: #dfdce3;
+}
+
+div.card {
+    width: 250px;
+    height: 440px;
+    padding: 5px 15px;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px 30px;
+    background-color: #fc4a1a;
+}
+
+h1 {
+    display: block;
+    text-align: center;
+}
+
+h3, h4 {
+    display: block;
+}
+
+button {
+    background: #26547C;
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    
+    color: #dfdce3;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.buttons button {
+    margin: 0 3px;
+}
+
+
+.buttons {
+    font-family: 'Roboto', sans-serif;
+    width: 500px;
+    text-align: center;
+    margin: 10px auto 30px auto;
+
+}
