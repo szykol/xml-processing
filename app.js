@@ -3,10 +3,10 @@ print = (text) => {
 }
 
 function loadAndDisplay(type) {
-    if (type) 
+    if (type)
         load(`//movie[@type='${type}']`, list => displayData(list));
     else
-        load('//movie',list=>displayData(list));
+        load('//movie', list => displayData(list));
 }
 
 function load(XPath, callback) {
@@ -17,7 +17,7 @@ function load(XPath, callback) {
         let currentMovie = nodes.iterateNext();
 
         objects = [];
-        while(currentMovie) {
+        while (currentMovie) {
             print(currentMovie);
             const title = currentMovie.childNodes[1].firstChild.nodeValue;
             const author = currentMovie.childNodes[3].firstChild.nodeValue;
@@ -58,8 +58,8 @@ function displayData(objects) {
 
         let img = document.createElement('img');
         img.setAttribute('src', obj['imURL']);
-        img.setAttribute('width',"190px");
-        img.setAttribute('height',"300px");
+        img.setAttribute('width', "190px");
+        img.setAttribute('height', "300px");
         card.appendChild(img);
 
         let year = document.createElement('h4');
@@ -74,9 +74,9 @@ function displayData(objects) {
 function getXML(callback) {
     var req = new XMLHttpRequest();
     req.open('GET', '/movies.xml');
-    req.onreadystatechange = function() {
+    req.onreadystatechange = function () {
         if (req.readyState == 4) {
-            if(req.status == 200) {
+            if (req.status == 200) {
                 let xml = req.responseXML;
                 console.log(xml);
                 callback(xml);
@@ -90,17 +90,17 @@ function getXML(callback) {
 
 function getTag() {
     const tagName = document.getElementById('name').value;
-    
+
     let data = document.getElementById('info');
     data.innerHTML = "";
 
     getXML(xml => {
         const nodes = xml.evaluate(`//${tagName}`, xml, null, XPathResult.ANY_TYPE, null);
         console.log(nodes);
-        
+
         let currentNode = nodes.iterateNext();
 
-        while(currentNode) {
+        while (currentNode) {
             let p = document.createElement('p');
             const xmlString = (new XMLSerializer()).serializeToString(currentNode);
             p.textContent += xmlString;
